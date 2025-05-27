@@ -3,7 +3,7 @@ name: Auto Merge Develop into Main
 on:
   push:
     branches:
-      - develop
+      - develop  # Trigger only when develop is updated
 
 jobs:
   auto-merge:
@@ -25,4 +25,4 @@ jobs:
           git fetch origin main
           git checkout main
           git merge origin/develop --no-ff -m "Auto-merged develop into main"
-          git push origin main
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
