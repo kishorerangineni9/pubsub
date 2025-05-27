@@ -3,7 +3,7 @@ name: Auto Merge Develop into Main
 on:
   push:
     branches:
-      - develop  # Trigger only when develop is updated
+      - develop
 
 jobs:
   auto-merge:
