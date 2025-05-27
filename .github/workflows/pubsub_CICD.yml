@@ -3,14 +3,14 @@ name: Auto Merge Develop into Main
 on:
   push:
     branches:
-      - develop  # Trigger only when develop is updated
+      - develop
 
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Configure Git
